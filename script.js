@@ -153,6 +153,13 @@ function startGame() {
   }, gameSpeedDelay);
 }
 
+// Click event handling
+document.addEventListener('click', function(event) {
+  if (!gameStarted) {
+    startGame();
+  }
+});
+
 // Keypress event listener
 function handleKeyPress(event) {
   if (
