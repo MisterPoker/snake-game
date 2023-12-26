@@ -18,6 +18,19 @@ let gameStarted = false;
 let startTouchX;
 let startTouchY;
 
+function isMobileDevice() {
+  return /iPhoneiPadPodAndroid/i.test(navigator.userAgent);
+}
+
+if (isMobileDevice()) {
+  const mobileInfoText = document.createElement('div');
+  mobileInfoText.textContent = 'This site can only be used with a laptop or computer';
+  mobileInfoText.classList.add('mobile-info-text');
+  document.body.appendChild(mobileInfoText);
+} else {
+  return;
+}
+
 function handleTouchStart(event) {
   startTouchX = event.touches[0].clientX;
   startTouchY = event.touches[0].clientY;
@@ -152,13 +165,6 @@ function startGame() {
     draw();
   }, gameSpeedDelay);
 }
-
-// Click event handling
-document.addEventListener('click', function(event) {
-  if (!gameStarted) {
-    startGame();
-  }
-});
 
 // Keypress event listener
 function handleKeyPress(event) {
