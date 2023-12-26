@@ -88,3 +88,11 @@ body,
   position: absolute;
   top: 220px;
 }
+
+.mobile-info-text {
+  font-family: 'VT323', monospace; /* Use the exact same font as your existing content */
+  color: #333; /* Set the color as per your requirement */
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
